@@ -27,7 +27,7 @@ window.addEventListener("scroll", function () {
 async function fetchData(type = "certification") {
   let response;
   type === "certification"
-    ? (response = await fetch("/certification/certification.json"))
+    ? (response = await fetch("certification/certification.json"))
     : (response = await fetch("project/project.json"));
   const data = await response.json();
   return data;
