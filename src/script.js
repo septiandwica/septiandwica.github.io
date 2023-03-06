@@ -133,30 +133,30 @@ loadmore.addEventListener("click", () => {
 AOS.init();
 
 // disable inspect element or dev mode
-// document.addEventListener("contextmenu", function(e){
-//     e.preventDefault();
-// });
+document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+});
 
-// document.onkeydown = function (e){
-//     if (event) {
-//         return false;
-//     }
-//     if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0)){
-//         return false;
-//     }
-//     if (e.ctrlKey && e.shiftKey && e.keyCode == "C".charCodeAt(0)){
-//         return false;
-//     }
-//     if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)){
-//         return false;
-//     }
-//     if (e.ctrlKey && e.shiftKey && e.keyCode == "U".charCodeAt(0)){
-//         return false;
-//     }
-//     if (e.ctrlKey && e.keyCode == "I".charCodeAt(0)){
-//         return false;
-//     }
-// }
+document.onkeydown = function (e){
+    if (event) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0)){
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == "C".charCodeAt(0)){
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)){
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == "U".charCodeAt(0)){
+        return false;
+    }
+    if (e.ctrlKey && e.keyCode == "I".charCodeAt(0)){
+        return false;
+    }
+}
 
 // Scrollspy botstrap
 const scrollSpy = new bootstrap.ScrollSpy(document.body, {
