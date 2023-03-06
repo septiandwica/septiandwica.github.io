@@ -1,0 +1,43 @@
+[
+    {
+        "name": "Designing the visual appearance of the website (UI Design) with Figma for website designers",
+        "by": "skillsacademy x prakerja",
+        "image": "./certification/uiux-skillsacademy.png",
+        "category":"programming",
+        "links": {
+            "credentials": "https://skillacademy.com/sertifikat/9Y4A6M5YDSZ72E"
+        }
+    }, {
+        "name": "Learn basic web programming",
+        "by": "Dicoding Academy x Lintasarta Cloudeka Digischool",
+        "image": "./certification/web-dicoding.png",
+        "category":"programming",
+        "links": {
+            "credentials": "https://www.dicoding.com/certificates/QLZ92D242X5D"
+        }
+    }, {
+        "name": "Learn basic javascript programming",
+        "by": "Dicoding Academy x IndosatID Camp",
+        "image": "./certification/js-dicoding.png",
+        "category":"programming",
+        "links": {
+            "credentials": "https://www.dicoding.com/certificates/NVP7KRLRGZR0"
+        }
+    }, {
+        "name": "Learn to Create a Web Front-End for Beginners",
+        "by": "Dicoding Academy x Lintasarta Cloudeka Digischool",
+        "image": "./certification/fe-dicoding.png",
+        "category":"programming",
+        "links": {
+            "credentials": "https://www.dicoding.com/certificates/4EXG9YR7QZRL"
+        }
+    }, {
+        "name": " Learn to Create Backend Applications for Beginners with Cloudeka",
+        "by": "Dicoding Academy x Lintasarta Cloudeka Digischool",
+        "image": "./certification/be-dicoding.png",
+        "category":"programming",
+        "links": {
+            "credentials": "https://www.dicoding.com/certificates/QLZ9274YMX5D"
+        }
+    }
+]

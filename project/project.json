@@ -1,0 +1,49 @@
+[
+    {
+        "title": "Form Website",
+        "tech": "HTML & CSS",
+        "image": "./assets/img/project/form.png",
+        "desc":"This is my first project. I Learn in freecodecamp to make form website using HTML & CSS",
+        "links": {
+            "demo": "https://septiandwica.github.io/Survey-Form/",
+            "code": "https://github.com/Septiandwica/Survey-Form"
+        }
+    },
+    {
+        "title": "Learn Code Website",
+        "tech": "HTML, CSS & JS",
+        "image": "./assets/img/project/proyek web dasar.png",
+        "desc":"This is my for dicoding submission.",
+        "links": {
+            "demo": "https://septiandwica.github.io/Project-Web-Dasar/",
+            "code": "https://github.com/Septiandwica/Project-Web-Dasar"
+        }
+    },{
+        "title": "BookShelf Web App",
+        "tech": "HTML & CSS",
+        "image": "./assets/img/project/bookshelf app.png",
+        "desc":"This is my project for dicoding submission.",
+        "links": {
+            "demo": "https://septiandwica.github.io/bookshelf-app/",
+            "code": "https://github.com/Septiandwica/bookshelf-app"
+        }
+    },{
+        "title": "Company Profile",
+        "tech": "HTML, CSS, JS & BOOTSTRAP",
+        "image": "./assets/img/project/proyek freelance.png",
+        "desc": "This is my project for company profile(Thalia Education)",
+        "links": {
+            "demo": "https://thaliaeducation.septiandwica.site",
+            "code": "https://github.com/Septiandwica/Company-Profile-1"
+        }
+    },{
+        "title": "Portfolio Website",
+        "tech": "HTML, CSS, JS & BOOTSTRAP",
+        "image": "./assets/img/project/portfolio.png",
+        "desc": "This is my project for personal portfolio. Design inspiration Jigar Sable",
+        "links": {
+            "demo": "https://septiandwica.site",
+            "code": "https://github.com/Septiandwica/"
+        }
+    }
+]
