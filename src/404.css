@@ -46,6 +46,6 @@
     border-radius: 5px;
     text-decoration: none;
   }
-  .error .text a:hover{
+  .error .text .btn a:hover{
     color: var(--light);
   }
