@@ -1,0 +1,20 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800;900&display=swap');
+
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px; 
+    text-align: center;
+    font-family: 'League Spartan';
+    background: var(--display);
+  }
+  .error .text a{
+    padding: 5px 10px;
+    background: var(--second);
+    color: var(--light);
+    border-radius: 5px;
+    text-decoration: none;
+  }
