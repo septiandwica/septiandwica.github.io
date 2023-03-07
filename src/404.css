@@ -32,10 +32,9 @@
 .error{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     font-family: 'League Spartan';
     background: var(--display);
-    align-items: center;
-    justify-content: center;
   }
   .error a{
     padding: 5px 20px;
