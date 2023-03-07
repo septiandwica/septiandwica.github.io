@@ -37,10 +37,13 @@
     text-align: center;
     background: var(--display);
   }
+  .error .text p{
+    font-size: 30px;
+  }
   .error .text a{
     padding: 5px 10px;
-    background: var(--second);
     color: var(--light);
+    font-size: 18px;
     border-radius: 5px;
     text-decoration: none;
   }
