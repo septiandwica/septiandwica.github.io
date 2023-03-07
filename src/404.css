@@ -31,7 +31,7 @@
 
 .error{
     display: flex;
-    text-align: center;
+    flex-direction: column;
     font-family: 'League Spartan';
     background: var(--display);
     align-items: center;
@@ -41,4 +41,6 @@
     padding: 5px 20px;
     background: var(--second);
     color: var(--light);
+    border-radius: 5px;
+    text-decoration: none;
   }
