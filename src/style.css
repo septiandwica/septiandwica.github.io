@@ -377,7 +377,7 @@ form .btn{
 .about .skills{
   background: #0003a0;
   color: var(--light);
-  min-height: 100vh;
+  min-height: 100%;
   align-items: center;
 } 
 .about .skills .container .title h2{
@@ -455,8 +455,6 @@ form .btn{
 .certification .title h2{
   font-size: 40px ;
   font-weight: 800;
-  margin-bottom: 80px;
-  margin-top: 30px;
 } 
 .certification .title i{
   color: var(--primary);
