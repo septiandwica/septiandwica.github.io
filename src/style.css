@@ -714,6 +714,7 @@ footer .content .socials a.instagram:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 120px; 
   text-align: center;
   font-family: 'League Spartan';
   background: var(--display);
