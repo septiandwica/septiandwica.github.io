@@ -432,7 +432,7 @@ form .btn{
     margin-bottom: 90px;
   }
   .about .container .content .intro{
-    width: 100vw;
+    width: 100%;
     margin: 40px 0px 0px 0px;
   }
 }
