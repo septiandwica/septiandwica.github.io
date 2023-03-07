@@ -258,6 +258,12 @@ form .btn{
   .home .content .image {
     margin: 60px 0px 40px 0px;
   }
+  .home .content .image img {
+    width: 300px;
+  }
+  .home .content .image img:hover{
+    width: 320px;
+  }
 }
 
 
@@ -434,6 +440,9 @@ form .btn{
   .about .container .content .intro{
     width: 100%;
     margin: 40px 0px 0px 0px;
+  }
+  .about .container .content .image img {
+    width: 300px;
   }
 }
 
