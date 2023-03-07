@@ -15,7 +15,7 @@
   }
   
   body{
-    font-family: 'League Spartan';
+    font-family: 'Poppins';
     background: var(--display) ;
   }
   
@@ -42,7 +42,7 @@
   }
   .error .text a{
     padding: 5px 10px;
-    color: var(--light);
+    color: var(--primary);
     font-size: 18px;
     border-radius: 5px;
     text-decoration: none;
