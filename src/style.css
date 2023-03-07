@@ -153,9 +153,12 @@ form .btn{
   align-items: center;
 }
 
+.home .content .image{
+  margin-left: 50px;
+}
 .home .content .image img {
   width: 360px;
-  margin-left: 50px;
+
   border-radius: 50%;
   box-shadow: 0 3px 10px var(--danger);
   cursor: pointer;
