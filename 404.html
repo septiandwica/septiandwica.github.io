@@ -4,15 +4,116 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+            name="keywords"
+            content="Septiandwica, Septian dwi cahyo, septian, portfolio, personal portfolio, portfolio design, portfolio website"/>
+        <meta
+            name="description"
+            content="Welcome to septian's Portfolio. Front-End Web Developer, UI/UX Designer and Content Creator"/>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous"/>
+        <link rel="stylesheet" href="src/style.css"/>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"/>
+        <link id="favicon" rel="shortcut icon" href="./assets/img/sdcicon.svg"/>
     <link rel="stylesheet" href="src/404.css">
+    <link rel="stylesheet" href="src/style.css">
+
     <title>Page Not Found</title>
 </head>
 <body>
+    <nav
+            class="navbar d-flex w-100 position-fixed navbar-expand-lg navbar-light bg-transparent">
+            <div class="container">
+                <a class="navbar-brand" href="">
+                    <svg
+                        id="icon-bg"
+                        width="40"
+                        height="40"
+                        viewbox="0 0 486 486"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            id="icon-st"
+                            d="M12.5 128.717L210.444 14.4338L408.388 128.717V357.283L210.444 471.566L12.5 357.283V128.717Z"
+                            stroke="#2D31FA"
+                            stroke-width="30"/>
+                        <path
+                            id="icon-s"
+                            d="M207.6 144.4C219.9 144.4 230.65 145.75 239.85 148.45C249.05 151.15 256.45 154 262.05 157C267.65 160 271.05 162 272.25 163L250.65 199.15C249.05 197.95 246.3 196.2 242.4 193.9C238.6 191.6 234.05 189.55 228.75 187.75C223.55 185.95 218.1 185.05 212.4 185.05C204.7 185.05 198.45 186.45 193.65 189.25C188.95 191.95 186.6 196 186.6 201.4C186.6 205.1 187.85 208.45 190.35 211.45C192.95 214.35 196.85 217.15 202.05 219.85C207.35 222.45 214.05 225.3 222.15 228.4C229.55 231.1 236.5 234.3 243 238C249.5 241.7 255.2 246.1 260.1 251.2C265.1 256.2 269.05 262 271.95 268.6C274.85 275.2 276.3 282.7 276.3 291.1C276.3 301.1 274.25 309.8 270.15 317.2C266.05 324.5 260.45 330.55 253.35 335.35C246.35 340.15 238.35 343.7 229.35 346C220.45 348.4 211.2 349.6 201.6 349.6C188 349.6 175.8 348.05 165 344.95C154.3 341.85 145.65 338.5 139.05 334.9C132.45 331.3 128.5 328.9 127.2 327.7L149.55 290.05C150.75 290.95 153.05 292.4 156.45 294.4C159.95 296.4 164.2 298.5 169.2 300.7C174.2 302.8 179.5 304.6 185.1 306.1C190.8 307.6 196.4 308.35 201.9 308.35C211.1 308.35 218 306.6 222.6 303.1C227.2 299.5 229.5 294.8 229.5 289C229.5 284.7 228.05 280.85 225.15 277.45C222.25 274.05 217.9 270.85 212.1 267.85C206.3 264.75 199.05 261.5 190.35 258.1C181.65 254.6 173.5 250.35 165.9 245.35C158.4 240.35 152.3 234.1 147.6 226.6C142.9 219.1 140.55 209.8 140.55 198.7C140.55 187.6 143.65 178 149.85 169.9C156.15 161.7 164.4 155.4 174.6 151C184.9 146.6 195.9 144.4 207.6 144.4Z"
+                            fill="#2D31FA"/>
+                    </svg>
+                </a>
+
+                <button
+                    class="navbar-toggler position-relative collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="toggler-icon d-block top-bar"></span>
+                    <span class="toggler-icon d-block middle-bar"></span>
+                    <span class="toggler-icon d-block bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#certification">Certification</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#project">Projects</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" target="_blank" href="https://blog.septiandwica.site">Blog</a >
+                        </li>
+                    </ul>
+                    <form>
+                        <a
+                            class="btn"
+                            href="mailto:septiandwica@hotmail.com"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            type="button">Contact me</a>
+                    </form>
+                </div>
+            </div>
+        </nav>
     <section class="error">
         <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_vzj1xd0x.json"  background="transparent"  speed="1"  style="width: 600px; height: 600px;"  loop  autoplay></lottie-player>
         <p>Uh-oh, page not found.....</p>
         <a class="error"href="https://septiandwica.site">Go Back</a>
     </section>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"
+            integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.6.3.js"
+            integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+            crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+        <script src="src/script.js"></script>
 </body>
 </html>
