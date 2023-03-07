@@ -286,6 +286,7 @@ form .btn{
 }
 .about .container {
   height: 100%;;
+  margin-bottom: 40px;
 }
 .about .container .content{
   margin: 40px 0 40px 0;
