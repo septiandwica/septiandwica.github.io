@@ -707,3 +707,21 @@ footer .content .socials a.instagram:hover {
     flex-direction: column;
   }
 }
+
+
+.error{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'League Spartan';
+  background: var(--display);
+}
+.error .text a{
+  padding: 5px 10px;
+  background: var(--second);
+  color: var(--light);
+  border-radius: 5px;
+  text-decoration: none;
+}
