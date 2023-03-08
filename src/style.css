@@ -140,7 +140,6 @@ form .btn{
 /* home */
 .home {
   min-height: 100vh;
-  overflow: hidden;
 }
 .home #particles-js {
   height: 100%;
@@ -260,10 +259,18 @@ form .btn{
     margin: 60px 0px 40px 0px;
   }
   .home .content .image img {
-    width: 300px;
+    width: 340px;
   }
   .home .content .image img:hover{
-    width: 320px;
+    width: 360px;
+  }
+}
+@media screen and (max-width: 645px) {
+  .home .content .image img {
+    width: 280px;
+  }
+  .home .content .image img:hover{
+    width: 290px;
   }
 }
 
@@ -271,8 +278,6 @@ form .btn{
 /* About Section */
 .about {
   min-height: 100vh;
-  overflow: hidden;
-
 }
 
 .about .container .title h2 {
@@ -321,7 +326,7 @@ form .btn{
 } 
 
 .about .container .content .intro{
-  width: 40%;
+  width: 40vw;
   margin-left: 50px;
   justify-content: center;
   color: var(--dark);
@@ -447,6 +452,11 @@ form .btn{
   }
   .about .container .content .image img {
     width: 300px;
+  }
+}
+@media screen and (max-width: 645px) {
+  .about .container .content .image img {
+    width: 280px;
   }
 }
 
