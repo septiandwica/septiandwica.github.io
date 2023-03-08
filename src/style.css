@@ -318,8 +318,7 @@ form .btn{
 } 
 
 .about .container .content .intro{
-  width: 40vw;
-  margin-left: 50px;
+  width: 40%;
   justify-content: center;
   color: var(--dark);
 }
