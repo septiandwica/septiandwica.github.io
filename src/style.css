@@ -498,6 +498,7 @@ form .btn{
 .certification .title h2{
   font-size: 40px ;
   font-weight: 800;
+  margin-top: 60px;
 } 
 .certification .title i{
   color: var(--primary);
