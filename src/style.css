@@ -266,11 +266,24 @@ form .btn{
   }
 }
 @media screen and (max-width: 645px) {
+  
   .home .content .image img {
     width: 280px;
   }
   .home .content .image img:hover{
     width: 290px;
+  }
+  .home .content .intro h2 {
+    font-size: 45px;
+  }
+  .home .content .intro h2 span {
+    font-size: 46px;
+  }
+  .home .content .intro p {
+    font-size: 24px;
+  }
+  .home .content .intro p span {
+    font-size: 25px;
   }
 }
 
@@ -327,7 +340,7 @@ form .btn{
 
 .about .container .content .intro{
   width: 40vw;
-  margin-left: 50px;
+  margin-left: 80px;
   justify-content: center;
   color: var(--dark);
 }
@@ -453,10 +466,16 @@ form .btn{
   .about .container .content .image img {
     width: 300px;
   }
+  .about .container .content .intro{
+    margin-left: 30px;
+  }
 }
 @media screen and (max-width: 645px) {
   .about .container .content .image img {
     width: 280px;
+  }
+  .about .container .content .intro{
+    margin-left: 0px;
   }
 }
 
