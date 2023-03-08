@@ -375,7 +375,7 @@ form .btn{
   margin: 9px;
 }
 .about .container .content .intro .cv-btn{
-  width: 170px;
+  width: 100%;
   margin-top: 20px;
 }
 .about .container .content .intro  .cv-btn .btn{
