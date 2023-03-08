@@ -140,6 +140,7 @@ form .btn{
 /* home */
 .home {
   min-height: 100vh;
+  flex-direction: row;
 }
 .home #particles-js {
   height: 100%;
@@ -263,6 +264,9 @@ form .btn{
   }
   .home .content .image img:hover{
     width: 360px;
+  }
+  .home{
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 645px) {
