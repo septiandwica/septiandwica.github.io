@@ -269,7 +269,7 @@ form .btn{
 
 /* About Section */
 .about {
-  min-height: 200vh;
+  min-height: 100vh;
 }
 
 .about .container .title h2 {
