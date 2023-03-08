@@ -140,6 +140,7 @@ form .btn{
 /* home */
 .home {
   min-height: 100vh;
+  overflow: hidden;
 }
 .home #particles-js {
   height: 100%;
@@ -270,6 +271,8 @@ form .btn{
 /* About Section */
 .about {
   min-height: 100vh;
+  overflow: hidden;
+
 }
 
 .about .container .title h2 {
