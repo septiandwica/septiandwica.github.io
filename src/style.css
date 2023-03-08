@@ -36,6 +36,7 @@ html::-webkit-scrollbar-thumb {
   z-index: 15;
   font-weight: 500;
   font-size: 20px;
+  justify-content: space-around;
 }
 .nav-link:hover{
   color: var(--primary);
