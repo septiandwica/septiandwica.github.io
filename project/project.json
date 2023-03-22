@@ -40,7 +40,7 @@
         "title": "Portfolio Website",
         "tech": "HTML, CSS, JS & BOOTSTRAP",
         "image": "./assets/img/project/portfolio.png",
-        "desc": "This is my project for personal portfolio. Design inspiration Jigar Sable",
+        "desc": "This is my project for personal portfolio.",
         "links": {
             "demo": "https://septiandwica.site",
             "code": "https://github.com/Septiandwica/"
