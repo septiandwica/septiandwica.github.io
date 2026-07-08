@@ -6,7 +6,14 @@ import tailwind from "eslint-plugin-tailwindcss";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  ...tailwind.configs["flat/recommended"],
+  {
+    ...tailwind.configs["recommended"],
+    settings: {
+      tailwindcss: {
+        config: "src/app/globals.css",
+      },
+    },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
@@ -16,6 +23,7 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
   ]),
   {
+    plugins: { tailwindcss: tailwind },
     rules: {
       // TypeScript - No "any" type allowed
       "@typescript-eslint/no-explicit-any": "error",

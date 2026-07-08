@@ -27,7 +27,7 @@ export async function getGithubRepos(): Promise<Repo[]> {
       .filter(repo => !repo.fork)
       .sort((a, b) => b.stargazers_count - a.stargazers_count)
       .slice(0, 4);
-  } catch (error) {
+  } catch {
     return [];
   }
 }

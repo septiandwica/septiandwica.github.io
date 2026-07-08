@@ -3,7 +3,7 @@ import { Repo } from "../../types/github";
 export default function Projects({ repos }: { repos: Repo[] }) {
   return (
     <section id="projects" className="pt-24">
-      <h2 className="text-2xl font-bold tracking-tight mb-8">Selected Projects</h2>
+      <h2 className="mb-8 text-2xl font-bold tracking-tight">Selected Projects</h2>
       
       <div className="flex flex-col gap-10">
         {repos.length > 0 ? (
@@ -15,18 +15,18 @@ export default function Projects({ repos }: { repos: Repo[] }) {
               rel="noopener noreferrer"
               className="group block border-t border-gray-100 pt-6"
             >
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-3">
-                <h3 className="text-lg font-semibold group-hover:underline decoration-2 underline-offset-4">
+              <div className="mb-3 flex flex-col justify-between gap-2 sm:flex-row sm:items-baseline">
+                <h3 className="text-lg font-semibold decoration-2 underline-offset-4 group-hover:underline">
                   {repo.name}
                 </h3>
-                <span className="text-sm text-gray-400 font-mono">
+                <span className="font-mono text-sm text-gray-400">
                   {new Date(repo.updated_at).getFullYear()}
                 </span>
               </div>
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="mb-4 leading-relaxed text-gray-600">
                 {repo.description || "No description provided for this repository."}
               </p>
-              <div className="flex gap-3 text-xs text-gray-400 font-medium">
+              <div className="flex gap-3 text-xs font-medium text-gray-400">
                 {repo.language && (
                   <>
                     <span>{repo.language}</span>
@@ -47,7 +47,7 @@ export default function Projects({ repos }: { repos: Repo[] }) {
           href="https://github.com/septiandwica?tab=repositories" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+          className="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-800"
         >
           View all projects on GitHub →
         </a>

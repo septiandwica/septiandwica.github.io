@@ -19,14 +19,14 @@ export default async function Post({ params }: Params) {
   const content = await markdownToHtml(post.content || "");
 
   return (
-    <article className="w-full max-w-3xl mx-auto px-6 pt-16 pb-24 flex-1">
-      <Link href="/blog" className="text-sm font-medium text-gray-400 hover:text-black transition-colors mb-8 inline-block">
+    <article className="mx-auto w-full max-w-3xl flex-1 px-6 pt-16 pb-24">
+      <Link href="/blog" className="mb-8 inline-block text-sm font-medium text-gray-400 transition-colors hover:text-black">
         ← Back to Blog
       </Link>
       
       <header className="mb-14">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight">{post.title}</h1>
-        <time className="text-gray-400 font-mono text-sm">
+        <h1 className="mb-4 text-4xl leading-tight font-bold tracking-tight md:text-5xl">{post.title}</h1>
+        <time className="font-mono text-sm text-gray-400">
           {new Date(post.date).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
@@ -36,7 +36,7 @@ export default async function Post({ params }: Params) {
       </header>
 
       <div 
-        className="prose prose-lg prose-p:text-gray-600 prose-headings:font-bold prose-a:text-black prose-a:border-b prose-a:border-black prose-a:no-underline hover:prose-a:text-gray-600 hover:prose-a:border-gray-600 prose-a:transition-colors max-w-none"
+        className="prose prose-lg max-w-none prose-headings:font-bold prose-p:text-gray-600 prose-a:border-b prose-a:border-black prose-a:text-black prose-a:no-underline prose-a:transition-colors hover:prose-a:border-gray-600 hover:prose-a:text-gray-600"
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </article>

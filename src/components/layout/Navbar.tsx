@@ -3,15 +3,15 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="w-full max-w-3xl mx-auto px-6 py-12 flex justify-between items-center">
-      <Link href="/" className="flex items-center gap-3 font-semibold text-lg tracking-tight hover:opacity-80 transition-opacity">
+    <nav className="mx-auto flex w-full max-w-3xl items-center justify-between px-6 py-12">
+      <Link href="/" className="flex items-center gap-3 text-lg font-semibold tracking-tight transition-opacity hover:opacity-80">
         <Image src="/icon.svg" alt="Logo" width={32} height={32} />
        tyann.
       </Link>
       <div className="flex gap-6 text-sm text-gray-500">
-        <Link href="/#about" className="hover:text-black transition-colors">About</Link>
-        <Link href="/#projects" className="hover:text-black transition-colors">Projects</Link>
-        <Link href="/blog" className="hover:text-black transition-colors">Blog</Link>
+        <Link href="/#about" className="transition-colors hover:text-black">About</Link>
+        <Link href="/#projects" className="transition-colors hover:text-black">Projects</Link>
+        <Link href="/blog" className="transition-colors hover:text-black">Blog</Link>
       </div>
     </nav>
   );

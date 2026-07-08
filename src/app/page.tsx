@@ -6,7 +6,7 @@ export default async function Home() {
   const repos = await getGithubRepos();
 
   return (
-    <div className="w-full max-w-3xl mx-auto px-6 pt-16 pb-24 flex-1">
+    <div className="mx-auto w-full max-w-3xl flex-1 px-6 pt-16 pb-24">
       <Hero />
       <Projects repos={repos} />
     </div>

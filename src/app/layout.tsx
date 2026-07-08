@@ -33,9 +33,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen bg-white text-black selection:bg-black selection:text-white flex flex-col">
+      <body className="flex min-h-screen flex-col bg-white text-black selection:bg-black selection:text-white">
         <Navbar />
-        <main className="flex-1 w-full flex flex-col">
+        <main className="flex w-full flex-1 flex-col">
           {children}
         </main>
         <Footer />
