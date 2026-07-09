@@ -23,9 +23,9 @@ export default function BlogList({ initialPosts }: BlogListProps) {
 
   return (
     <div className="w-full">
-      {/* Search and Filters */}
+
       <div className="mb-12 space-y-6">
-        {/* Search Bar */}
+
         <div className="relative">
           <input
             type="text"
@@ -44,7 +44,7 @@ export default function BlogList({ initialPosts }: BlogListProps) {
           </svg>
         </div>
 
-        {/* Categories */}
+
         {categories.length > 1 && (
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
@@ -63,7 +63,7 @@ export default function BlogList({ initialPosts }: BlogListProps) {
           </div>
         )}
 
-        {/* Tags */}
+
         {tags.length > 0 && (
           <div className="flex flex-wrap gap-2 pt-2">
             {tags.map((tag) => (
@@ -83,7 +83,7 @@ export default function BlogList({ initialPosts }: BlogListProps) {
         )}
       </div>
 
-      {/* Featured Post */}
+
       {featuredPost && (
         <div className="mb-12">
           <h2 className="mb-6 text-xs font-bold tracking-widest text-gray-400 uppercase">Featured</h2>
@@ -114,7 +114,7 @@ export default function BlogList({ initialPosts }: BlogListProps) {
         </div>
       )}
 
-      {/* Post List */}
+
       <div className="flex flex-col gap-10">
         <h2 className="text-xs font-bold tracking-widest text-gray-400 uppercase">
           {isFiltering ? "Search Results" : "All Articles"}

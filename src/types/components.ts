@@ -27,5 +27,5 @@ export type ProjectDetailContentProps = {
 };
 
 export type GiscusWrapperProps = {
-  // Empty for now, but allows future extensibility without changing the UI definition
+
 };

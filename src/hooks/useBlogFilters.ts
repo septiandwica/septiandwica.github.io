@@ -6,7 +6,7 @@ export function useBlogFilters(initialPosts: Post[]) {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-  // Extract unique categories and tags
+
   const categories = useMemo(() => {
     const cats = new Set(initialPosts.map(p => p.category));
     return ["All", ...Array.from(cats)];
@@ -18,7 +18,7 @@ export function useBlogFilters(initialPosts: Post[]) {
     return Array.from(tgs);
   }, [initialPosts]);
 
-  // Filter posts
+
   const filteredPosts = useMemo(() => {
     return initialPosts.filter((post) => {
       const matchesSearch =
@@ -39,7 +39,7 @@ export function useBlogFilters(initialPosts: Post[]) {
 
   const handleCategoryChange = (cat: string) => {
     setSelectedCategory(cat);
-    setSearchQuery(""); // clear search on category change
+    setSearchQuery("");
   };
 
   const handleTagToggle = (tag: string) => {

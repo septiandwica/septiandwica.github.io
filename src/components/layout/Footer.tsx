@@ -27,7 +27,7 @@ export default function Footer() {
   const [quote, setQuote] = useState("");
 
   useEffect(() => {
-    // Generate an index based on the current day of the year
+
     const now = new Date();
     const start = new Date(now.getFullYear(), 0, 0);
     const diff = now.getTime() - start.getTime();
