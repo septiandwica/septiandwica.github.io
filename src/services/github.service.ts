@@ -74,7 +74,25 @@ export async function getGithubRepo(repoName: string): Promise<Repo | null> {
       headers: getHeaders(),
     });
     if (!res.ok) return null;
-    return await res.json();
+    
+    const repo: Repo = await res.json();
+    
+    try {
+      const langRes = await fetch(
+        `https://api.github.com/repos/septiandwica/${repoName}/languages`,
+        { headers: getHeaders() }
+      );
+      if (langRes.ok) {
+        const langData = await langRes.json();
+        repo.languages = Object.keys(langData);
+      } else {
+        repo.languages = repo.language ? [repo.language] : [];
+      }
+    } catch {
+      repo.languages = repo.language ? [repo.language] : [];
+    }
+
+    return repo;
   } catch {
     return null;
   }

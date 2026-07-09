@@ -7,5 +7,6 @@ export type Repo = {
   updated_at: string;
   stargazers_count: number;
   fork: boolean;
+  forks_count: number;
   languages?: string[];
 };
