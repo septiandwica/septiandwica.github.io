@@ -34,7 +34,10 @@ export default function Footer() {
     const oneDay = 1000 * 60 * 60 * 24;
     const dayOfYear = Math.floor(diff / oneDay);
     
-    setQuote(techQuotes[dayOfYear % techQuotes.length]);
+    const timer = setTimeout(() => {
+      setQuote(techQuotes[dayOfYear % techQuotes.length]);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -42,7 +45,7 @@ export default function Footer() {
       <div className="flex flex-col items-center gap-6">
         <span className="text-2xl font-bold tracking-tight text-black">tyann.</span>
         
-        <p className="max-w-md text-base italic leading-relaxed text-gray-400 min-h-[48px] flex items-center justify-center">
+        <p className="flex min-h-[48px] max-w-md items-center justify-center text-base leading-relaxed text-gray-400 italic">
           {quote ? `"${quote}"` : ""}
         </p>
 

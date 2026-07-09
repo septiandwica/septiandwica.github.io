@@ -26,8 +26,8 @@ export default function ChatPage() {
           lang="id"
           loading="lazy"
         />
-        <p className="text-xs text-gray-400 mt-4 text-center">
-          *Note: If comments aren't loading, ensure GitHub Discussions are enabled for this repository and configured on giscus.app.
+        <p className="mt-4 text-center text-xs text-gray-400">
+          *Note: If comments aren&apos;t loading, ensure GitHub Discussions are enabled for this repository and configured on giscus.app.
         </p>
       </div>
     </div>

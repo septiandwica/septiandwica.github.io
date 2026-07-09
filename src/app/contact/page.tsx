@@ -46,7 +46,7 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 mt-8">
+      <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {socialLinks.map((link) => (
           <Link
             key={link.name}
@@ -55,8 +55,8 @@ export default function ContactPage() {
             rel="noopener noreferrer"
             className="flex items-center gap-4 rounded-xl border border-gray-200 p-4 transition-colors hover:bg-gray-50"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100">
-              <link.icon className="h-6 w-6 text-gray-600" />
+            <div className="flex size-12 items-center justify-center rounded-full bg-gray-100">
+              <link.icon className="size-6 text-gray-600" />
             </div>
             <div>
               <p className="font-medium text-gray-900">{link.name}</p>

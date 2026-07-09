@@ -9,7 +9,7 @@ export default function ContactLoading() {
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {[1, 2, 3, 4].map((i) => (
           <div key={i} className="flex items-center gap-4 rounded-xl border border-gray-100 p-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gray-100" />
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gray-100" />
             <div className="w-full space-y-2">
               <div className="h-4 w-16 rounded bg-gray-100" />
               <div className="h-3 w-32 rounded bg-gray-100" />
