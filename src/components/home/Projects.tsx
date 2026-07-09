@@ -24,14 +24,20 @@ export default function Projects({ repos }: { repos: Repo[] }) {
               <p className="mb-4 leading-relaxed text-gray-600">
                 {repo.description || "No description provided for this repository."}
               </p>
-              <div className="flex gap-3 text-xs font-medium text-gray-400">
-                {repo.language && (
+              <div className="flex flex-wrap gap-3 text-xs font-medium text-gray-400">
+                {repo.languages && repo.languages.length > 0 && (
                   <>
-                    <span>{repo.language}</span>
-                    <span>•</span>
+                    <span className="flex flex-wrap gap-2">
+                      {repo.languages.map(lang => (
+                        <span key={lang} className="rounded bg-gray-100 px-2 py-0.5 text-gray-600">
+                          {lang}
+                        </span>
+                      ))}
+                    </span>
+                    <span className="flex items-center">•</span>
                   </>
                 )}
-                <span>GitHub Repository</span>
+                <span className="flex items-center">GitHub Repository</span>
               </div>
             </a>
           ))

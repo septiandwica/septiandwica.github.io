@@ -15,18 +15,42 @@ export async function getGithubRepos(): Promise<Repo[]> {
     if (!res.ok) return [];
     const repos: Repo[] = await res.json();
     
+    let finalRepos = repos;
+    
     if (SELECTED_REPOS.length > 0) {
       const lowerSelected = SELECTED_REPOS.map(name => name.toLowerCase());
-      return repos
+      finalRepos = repos
         .filter(repo => lowerSelected.includes(repo.name.toLowerCase()))
         .sort((a, b) => lowerSelected.indexOf(a.name.toLowerCase()) - lowerSelected.indexOf(b.name.toLowerCase()));
+    } else {
+      // Filter out forks and return top 4 by stars if no SELECTED_REPOS
+      finalRepos = repos
+        .filter(repo => !repo.fork)
+        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+        .slice(0, 4);
     }
 
-    // Filter out forks and return top 4 by stars if no SELECTED_REPOS
-    return repos
-      .filter(repo => !repo.fork)
-      .sort((a, b) => b.stargazers_count - a.stargazers_count)
-      .slice(0, 4);
+    // Fetch languages for the selected repos
+    const reposWithLanguages = await Promise.all(
+      finalRepos.map(async (repo) => {
+        try {
+          const langRes = await fetch(
+            `https://api.github.com/repos/septiandwica/${repo.name}/languages`
+          );
+          if (langRes.ok) {
+            const langData = await langRes.json();
+            repo.languages = Object.keys(langData);
+          } else {
+            repo.languages = repo.language ? [repo.language] : [];
+          }
+        } catch {
+          repo.languages = repo.language ? [repo.language] : [];
+        }
+        return repo;
+      })
+    );
+
+    return reposWithLanguages;
   } catch {
     return [];
   }
