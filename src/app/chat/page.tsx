@@ -23,12 +23,9 @@ export default function ChatPage() {
           emitMetadata="0"
           inputPosition="top"
           theme="light"
-          lang="id"
+          lang="en"
           loading="lazy"
         />
-        <p className="mt-4 text-center text-xs text-gray-400">
-          *Note: If comments aren&apos;t loading, ensure GitHub Discussions are enabled for this repository and configured on giscus.app.
-        </p>
       </div>
     </div>
   );
