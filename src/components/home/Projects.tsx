@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Repo } from "../../types/github";
 
 export default function Projects({ repos }: { repos: Repo[] }) {
@@ -6,11 +7,9 @@ export default function Projects({ repos }: { repos: Repo[] }) {
       <div className="flex flex-col gap-10">
         {repos.length > 0 ? (
           repos.map((repo) => (
-            <a 
+            <Link 
               key={repo.id} 
-              href={repo.html_url} 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href={`/projects/${repo.name}`}
               className="group block border-t border-gray-100 pt-6"
             >
               <div className="mb-3 flex flex-col justify-between gap-2 sm:flex-row sm:items-baseline">
@@ -37,9 +36,9 @@ export default function Projects({ repos }: { repos: Repo[] }) {
                     <span className="flex items-center">•</span>
                   </>
                 )}
-                <span className="flex items-center">GitHub Repository</span>
+                <span className="flex items-center group-hover:text-black transition-colors">Read Case Study / README →</span>
               </div>
-            </a>
+            </Link>
           ))
         ) : (
           <p className="text-gray-500 italic">No public repositories found.</p>

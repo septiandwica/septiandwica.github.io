@@ -55,3 +55,28 @@ export async function getGithubRepos(): Promise<Repo[]> {
     return [];
   }
 }
+
+export async function getGithubRepo(repoName: string): Promise<Repo | null> {
+  try {
+    const res = await fetch(`https://api.github.com/repos/septiandwica/${repoName}`);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+export async function getGithubRepoReadme(repoName: string): Promise<string> {
+  try {
+    // Fetch the raw markdown content of the default branch
+    const res = await fetch(`https://api.github.com/repos/septiandwica/${repoName}/readme`, {
+      headers: {
+        Accept: 'application/vnd.github.v3.raw',
+      },
+    });
+    if (!res.ok) return "";
+    return await res.text();
+  } catch {
+    return "";
+  }
+}
