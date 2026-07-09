@@ -17,8 +17,8 @@ export default function ChatPage() {
           repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID || ""}
           category="General"
           categoryId={process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID || ""}
-          mapping="pathname"
-          term="Welcome to @giscus/react component!"
+          mapping="specific"
+          term="Guestbook"
           reactionsEnabled="1"
           emitMetadata="0"
           inputPosition="top"
