@@ -1,46 +1,24 @@
 "use client";
 
-import { useState, useMemo } from "react";
 import Link from "next/link";
-import { Post } from "@/lib/api";
+import { Post } from "@/types/blog";
+import { useBlogFilters } from "@/hooks/useBlogFilters";
+import { formatDate } from "@/utils/date";
 
 export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
-
-  // Extract unique categories and tags
-  const categories = useMemo(() => {
-    const cats = new Set(initialPosts.map(p => p.category));
-    return ["All", ...Array.from(cats)];
-  }, [initialPosts]);
-
-  const tags = useMemo(() => {
-    const tgs = new Set<string>();
-    initialPosts.forEach(p => p.tags?.forEach(t => tgs.add(t)));
-    return Array.from(tgs);
-  }, [initialPosts]);
-
-  // Filter posts
-  const filteredPosts = useMemo(() => {
-    return initialPosts.filter((post) => {
-      const matchesSearch =
-        post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesCategory = selectedCategory === "All" || post.category === selectedCategory;
-      const matchesTag = !selectedTag || (post.tags && post.tags.includes(selectedTag));
-      return matchesSearch && matchesCategory && matchesTag;
-    });
-  }, [initialPosts, searchQuery, selectedCategory, selectedTag]);
-
-  // Featured post logic (only show if no active filters are applied, or just highlight the first featured one in the filtered list)
-  const isFiltering = searchQuery !== "" || selectedCategory !== "All" || selectedTag !== null;
-  const featuredPost = !isFiltering ? initialPosts.find(p => p.featured) : null;
-  
-  // The regular list excludes the featured post if we are showing it at the top
-  const displayPosts = featuredPost 
-    ? filteredPosts.filter(p => p.slug !== featuredPost.slug)
-    : filteredPosts;
+  const {
+    searchQuery,
+    setSearchQuery,
+    selectedCategory,
+    handleCategoryChange,
+    selectedTag,
+    handleTagToggle,
+    categories,
+    tags,
+    isFiltering,
+    featuredPost,
+    displayPosts
+  } = useBlogFilters(initialPosts);
 
   return (
     <div className="w-full">
@@ -71,10 +49,7 @@ export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => {
-                  setSelectedCategory(cat);
-                  setSearchQuery(""); // clear search on category change
-                }}
+                onClick={() => handleCategoryChange(cat)}
                 className={`rounded-full px-4 py-1.5 text-xs font-medium transition-colors ${
                   selectedCategory === cat
                     ? "bg-black text-white"
@@ -93,7 +68,7 @@ export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
             {tags.map((tag) => (
               <button
                 key={tag}
-                onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
+                onClick={() => handleTagToggle(tag)}
                 className={`rounded px-3 py-1 text-xs font-medium transition-colors ${
                   selectedTag === tag
                     ? "bg-gray-800 text-white"
@@ -120,11 +95,7 @@ export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
                 {featuredPost.category}
               </span>
               <time className="font-mono text-sm text-gray-400 my-auto">
-                {new Date(featuredPost.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
+                {formatDate(featuredPost.date)}
               </time>
             </div>
             <h3 className="mb-3 text-2xl font-bold decoration-2 underline-offset-4 group-hover:underline">
@@ -163,11 +134,7 @@ export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
                   </h2>
                 </div>
                 <time className="font-mono text-sm text-gray-400">
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
+                  {formatDate(post.date)}
                 </time>
               </div>
               <p className="mb-4 leading-relaxed text-gray-600">{post.excerpt}</p>

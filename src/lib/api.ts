@@ -1,21 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+import { Post } from '@/types/blog';
 
 const postsDirectory = path.join(process.cwd(), '_posts');
-
-export type Post = {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  content: string;
-  category: string;
-  tags: string[];
-  featured: boolean;
-};
 
 export function getPostSlugs() {
   if (!fs.existsSync(postsDirectory)) return [];
@@ -46,9 +34,4 @@ export function getAllPosts(): Post[] {
     .map((slug) => getPostBySlug(slug))
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
-}
-
-export async function markdownToHtml(markdown: string) {
-  const result = await remark().use(html).process(markdown);
-  return result.toString();
 }

@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import GiscusWrapper from "@/components/GiscusWrapper";
-import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/api";
+import { getAllPosts, getPostBySlug } from "@/lib/api";
+import { markdownToHtml } from "@/utils/markdown";
+import { formatDate } from "@/utils/date";
 
 type Params = {
   params: Promise<{
@@ -36,11 +38,7 @@ export default async function Post({ params }: Params) {
         </div>
         <h1 className="mb-4 text-4xl leading-tight font-bold tracking-tight md:text-5xl">{post.title}</h1>
         <time className="font-mono text-sm text-gray-400">
-          {new Date(post.date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          })}
+          {formatDate(post.date)}
         </time>
       </header>
 
