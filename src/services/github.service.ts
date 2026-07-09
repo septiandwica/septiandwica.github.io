@@ -9,9 +9,20 @@ const SELECTED_REPOS: string[] = [
   "septiandwica.github.io"
 ];
 
+// Helper to construct headers with optional GitHub token
+function getHeaders(extraHeaders: Record<string, string> = {}) {
+  const headers: Record<string, string> = { ...extraHeaders };
+  if (process.env.GITHUB_TOKEN) {
+    headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN.trim()}`;
+  }
+  return headers;
+}
+
 export async function getGithubRepos(): Promise<Repo[]> {
   try {
-    const res = await fetch('https://api.github.com/users/septiandwica/repos?per_page=100');
+    const res = await fetch('https://api.github.com/users/septiandwica/repos?per_page=100', {
+      headers: getHeaders(),
+    });
     if (!res.ok) return [];
     const repos: Repo[] = await res.json();
     
@@ -35,7 +46,8 @@ export async function getGithubRepos(): Promise<Repo[]> {
       finalRepos.map(async (repo) => {
         try {
           const langRes = await fetch(
-            `https://api.github.com/repos/septiandwica/${repo.name}/languages`
+            `https://api.github.com/repos/septiandwica/${repo.name}/languages`,
+            { headers: getHeaders() }
           );
           if (langRes.ok) {
             const langData = await langRes.json();
@@ -58,7 +70,9 @@ export async function getGithubRepos(): Promise<Repo[]> {
 
 export async function getGithubRepo(repoName: string): Promise<Repo | null> {
   try {
-    const res = await fetch(`https://api.github.com/repos/septiandwica/${repoName}`);
+    const res = await fetch(`https://api.github.com/repos/septiandwica/${repoName}`, {
+      headers: getHeaders(),
+    });
     if (!res.ok) return null;
     return await res.json();
   } catch {
@@ -70,9 +84,7 @@ export async function getGithubRepoReadme(repoName: string): Promise<string> {
   try {
     // Fetch the raw markdown content of the default branch
     const res = await fetch(`https://api.github.com/repos/septiandwica/${repoName}/readme`, {
-      headers: {
-        Accept: 'application/vnd.github.v3.raw',
-      },
+      headers: getHeaders({ Accept: 'application/vnd.github.v3.raw' }),
     });
     if (!res.ok) return "";
     return await res.text();
