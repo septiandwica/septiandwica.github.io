@@ -2,9 +2,7 @@ import { Repo } from "../../types/github";
 
 export default function Projects({ repos }: { repos: Repo[] }) {
   return (
-    <section id="projects" className="pt-24">
-      <h2 className="mb-8 text-2xl font-bold tracking-tight">Selected Projects</h2>
-      
+    <section id="projects" className="mt-8">
       <div className="flex flex-col gap-10">
         {repos.length > 0 ? (
           repos.map((repo) => (

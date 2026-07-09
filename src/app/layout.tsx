@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import BottomBar from "../components/layout/BottomBar";
 
 export default function RootLayout({
   children,
@@ -33,12 +34,13 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-screen flex-col bg-white text-black selection:bg-black selection:text-white">
+      <body className="flex min-h-screen flex-col bg-white text-black selection:bg-black selection:text-white pb-28 md:pb-0">
         <Navbar />
         <main className="flex w-full flex-1 flex-col">
           {children}
         </main>
         <Footer />
+        <BottomBar />
       </body>
     </html>
   );
