@@ -1,15 +1,17 @@
 "use client";
 
 import Giscus from "@giscus/react";
+import { ENV } from "@/config/env";
+import { GiscusWrapperProps } from "@/types/components";
 
-export default function GiscusWrapper() {
+export default function GiscusWrapper(props: GiscusWrapperProps) {
   return (
     <Giscus
       id="comments"
-      repo={`${process.env.NEXT_PUBLIC_GITHUB_USERNAME?.trim()}/septiandwica.github.io`}
-      repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID?.trim() || ""}
+      repo={`${ENV.GITHUB_USERNAME}/septiandwica.github.io`}
+      repoId={ENV.GISCUS_REPO_ID}
       category="General"
-      categoryId={process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID?.trim() || ""}
+      categoryId={ENV.GISCUS_CATEGORY_ID}
       mapping="pathname"
       term="Welcome to @giscus/react component!"
       reactionsEnabled="1"
@@ -18,6 +20,7 @@ export default function GiscusWrapper() {
       theme="light"
       lang="id"
       loading="lazy"
+      {...props}
     />
   );
 }

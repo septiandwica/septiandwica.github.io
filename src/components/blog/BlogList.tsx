@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { Post } from "@/types/blog";
+import { BlogListProps } from "@/types/components";
 import { useBlogFilters } from "@/hooks/useBlogFilters";
-import { formatDate } from "@/utils/date";
+import FormattedDate from "@/components/ui/FormattedDate";
+import Tag from "@/components/ui/Tag";
 
-export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
+export default function BlogList({ initialPosts }: BlogListProps) {
   const {
     searchQuery,
     setSearchQuery,
@@ -75,7 +76,7 @@ export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
                     : "bg-gray-50 text-gray-500 hover:bg-gray-100"
                 }`}
               >
-                #{tag}
+                <Tag name={tag} className={selectedTag === tag ? "text-white" : "text-gray-500"} />
               </button>
             ))}
           </div>
@@ -94,9 +95,7 @@ export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
               <span className="rounded-full bg-black px-3 py-1 text-xs font-medium text-white">
                 {featuredPost.category}
               </span>
-              <time className="font-mono text-sm text-gray-400 my-auto">
-                {formatDate(featuredPost.date)}
-              </time>
+              <FormattedDate date={featuredPost.date} className="my-auto" />
             </div>
             <h3 className="mb-3 text-2xl font-bold decoration-2 underline-offset-4 group-hover:underline">
               {featuredPost.title}
@@ -107,7 +106,7 @@ export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
             {featuredPost.tags && featuredPost.tags.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {featuredPost.tags.map(tag => (
-                  <span key={tag} className="text-xs font-medium text-gray-400">#{tag}</span>
+                  <Tag key={tag} name={tag} />
                 ))}
               </div>
             )}
@@ -133,9 +132,7 @@ export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
                     {post.title}
                   </h2>
                 </div>
-                <time className="font-mono text-sm text-gray-400">
-                  {formatDate(post.date)}
-                </time>
+                <FormattedDate date={post.date} />
               </div>
               <p className="mb-4 leading-relaxed text-gray-600">{post.excerpt}</p>
               
@@ -144,9 +141,9 @@ export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
                 {post.tags && post.tags.length > 0 && (
                   <>
                     <span className="text-gray-300">•</span>
-                    <div className="flex flex-wrap gap-2 text-gray-400">
+                    <div className="flex flex-wrap gap-2">
                       {post.tags.map(tag => (
-                        <span key={tag}>#{tag}</span>
+                        <Tag key={tag} name={tag} />
                       ))}
                     </div>
                   </>

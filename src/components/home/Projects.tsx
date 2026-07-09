@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Repo } from "@/types/github";
+import { ProjectsProps } from "@/types/components";
 
-export default function Projects({ repos }: { repos: Repo[] }) {
+export default function Projects({ repos }: ProjectsProps) {
   return (
     <section id="projects" className="mt-8">
       <div className="flex flex-col gap-10">
