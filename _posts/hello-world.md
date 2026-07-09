@@ -2,6 +2,9 @@
 title: "Menjadi Software Engineer di Tahun 2026"
 date: "2026-07-09"
 excerpt: "Sebuah pandangan tentang bagaimana cara bertahan dan berkembang sebagai seorang Software Engineer di era modern."
+category: "Tech"
+tags: ["Next.js", "Web", "Portfolio"]
+featured: true
 ---
 
 Halo! Ini adalah tulisan pertama di blog portofolio saya.

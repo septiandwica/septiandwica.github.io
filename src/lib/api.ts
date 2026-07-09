@@ -12,6 +12,9 @@ export type Post = {
   date: string;
   excerpt: string;
   content: string;
+  category: string;
+  tags: string[];
+  featured: boolean;
 };
 
 export function getPostSlugs() {
@@ -30,6 +33,9 @@ export function getPostBySlug(slug: string): Post {
     title: data.title,
     date: data.date,
     excerpt: data.excerpt,
+    category: data.category || "General",
+    tags: data.tags || [],
+    featured: data.featured === true,
     content,
   };
 }

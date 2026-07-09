@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Giscus from "@giscus/react";
 import { getAllPosts, getPostBySlug, markdownToHtml } from "../../../lib/api";
 
 type Params = {
@@ -25,6 +26,14 @@ export default async function Post({ params }: Params) {
       </Link>
       
       <header className="mb-14">
+        <div className="mb-4 flex flex-wrap gap-3">
+          <span className="rounded-full bg-black px-3 py-1 text-xs font-medium text-white">
+            {post.category}
+          </span>
+          {post.tags && post.tags.map(tag => (
+            <span key={tag} className="text-xs font-medium text-gray-400 my-auto">#{tag}</span>
+          ))}
+        </div>
         <h1 className="mb-4 text-4xl leading-tight font-bold tracking-tight md:text-5xl">{post.title}</h1>
         <time className="font-mono text-sm text-gray-400">
           {new Date(post.date).toLocaleDateString('en-US', {
@@ -36,9 +45,29 @@ export default async function Post({ params }: Params) {
       </header>
 
       <div 
-        className="prose prose-lg max-w-none prose-headings:font-bold prose-p:text-gray-600 prose-a:border-b prose-a:border-black prose-a:text-black prose-a:no-underline prose-a:transition-colors hover:prose-a:border-gray-600 hover:prose-a:text-gray-600"
+        className="prose prose-lg max-w-none prose-headings:font-bold prose-p:text-gray-600 prose-a:border-b prose-a:border-black prose-a:text-black prose-a:no-underline prose-a:transition-colors hover:prose-a:border-gray-600 hover:prose-a:text-gray-600 mb-24"
         dangerouslySetInnerHTML={{ __html: content }}
       />
+      
+      {/* Discussion Section */}
+      <div className="mt-16 border-t border-gray-100 pt-16">
+        <h3 className="mb-8 text-2xl font-bold tracking-tight">Discussion</h3>
+        <Giscus
+          id="comments"
+          repo={`${process.env.NEXT_PUBLIC_GITHUB_USERNAME?.trim()}/septiandwica.github.io`}
+          repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID?.trim() || ""}
+          category="General"
+          categoryId={process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID?.trim() || ""}
+          mapping="pathname"
+          term="Welcome to @giscus/react component!"
+          reactionsEnabled="1"
+          emitMetadata="0"
+          inputPosition="top"
+          theme="light"
+          lang="id"
+          loading="lazy"
+        />
+      </div>
     </article>
   );
 }
