@@ -1,5 +1,5 @@
-import Projects from "../../components/home/Projects";
-import { getGithubRepos } from "../../services/github.service";
+import Projects from "@/components/home/Projects";
+import { getGithubRepos } from "@/services/github.service";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,4 +1,4 @@
-import { Repo } from "../types/github";
+import { Repo } from "@/types/github";
 
 const SELECTED_REPOS: string[] = [
   "president",

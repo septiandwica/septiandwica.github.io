@@ -1,5 +1,5 @@
-import { getAllPosts } from "../../lib/api";
-import BlogList from "../../components/blog/BlogList";
+import { getAllPosts } from "@/lib/api";
+import BlogList from "@/components/blog/BlogList";
 
 export default function Blog() {
   const posts = getAllPosts();

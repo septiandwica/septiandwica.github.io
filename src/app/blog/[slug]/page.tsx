@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import GiscusWrapper from "../../../components/GiscusWrapper";
-import { getAllPosts, getPostBySlug, markdownToHtml } from "../../../lib/api";
+import GiscusWrapper from "@/components/GiscusWrapper";
+import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/api";
 
 type Params = {
   params: Promise<{

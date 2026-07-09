@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Repo } from "../../types/github";
+import { Repo } from "@/types/github";
 
 export default function Projects({ repos }: { repos: Repo[] }) {
   return (

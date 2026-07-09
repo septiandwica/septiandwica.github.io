@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getGithubRepo, getGithubRepoReadme, getGithubRepos } from "../../../services/github.service";
-import { markdownToHtml } from "../../../lib/api";
+import { getGithubRepo, getGithubRepoReadme, getGithubRepos } from "@/services/github.service";
+import { markdownToHtml } from "@/lib/api";
 
 type Params = {
   params: Promise<{

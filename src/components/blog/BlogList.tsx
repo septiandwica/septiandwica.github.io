@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { Post } from "../../lib/api";
+import { Post } from "@/lib/api";
 
 export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
   const [searchQuery, setSearchQuery] = useState("");

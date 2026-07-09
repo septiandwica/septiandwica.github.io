@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   },
 };
 
-import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
-import BottomBar from "../components/layout/BottomBar";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import BottomBar from "@/components/layout/BottomBar";
 
 export default function RootLayout({
   children,
