@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import GiscusWrapper from "@/components/GiscusWrapper";
+import GiscusWrapper from "@/components/ui/GiscusWrapper";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import { DynamicRouteParams } from "@/types/route";
 import MarkdownViewer from "@/components/ui/MarkdownViewer";
