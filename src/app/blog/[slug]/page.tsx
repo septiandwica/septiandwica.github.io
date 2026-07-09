@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Giscus from "@giscus/react";
+import GiscusWrapper from "../../../components/GiscusWrapper";
 import { getAllPosts, getPostBySlug, markdownToHtml } from "../../../lib/api";
 
 type Params = {
@@ -52,21 +52,7 @@ export default async function Post({ params }: Params) {
       {/* Discussion Section */}
       <div className="mt-16 border-t border-gray-100 pt-16">
         <h3 className="mb-8 text-2xl font-bold tracking-tight">Discussion</h3>
-        <Giscus
-          id="comments"
-          repo={`${process.env.NEXT_PUBLIC_GITHUB_USERNAME?.trim()}/septiandwica.github.io`}
-          repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID?.trim() || ""}
-          category="General"
-          categoryId={process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID?.trim() || ""}
-          mapping="pathname"
-          term="Welcome to @giscus/react component!"
-          reactionsEnabled="1"
-          emitMetadata="0"
-          inputPosition="top"
-          theme="light"
-          lang="id"
-          loading="lazy"
-        />
+        <GiscusWrapper />
       </div>
     </article>
   );
