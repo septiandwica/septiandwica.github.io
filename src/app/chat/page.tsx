@@ -13,10 +13,10 @@ export default function ChatPage() {
       <div className="mt-8">
         <Giscus
           id="comments"
-          repo={`${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/septiandwica.github.io`}
-          repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID || ""}
+          repo={`${process.env.NEXT_PUBLIC_GITHUB_USERNAME?.trim()}/septiandwica.github.io`}
+          repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID?.trim() || ""}
           category="General"
-          categoryId={process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID || ""}
+          categoryId={process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID?.trim() || ""}
           mapping="specific"
           term="Guestbook"
           reactionsEnabled="1"
